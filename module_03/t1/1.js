@@ -14,4 +14,4 @@ list.innerHTML = `
   <li>Second item</li>
   <li>Third item</li>`
 
-list.classList.add(my-list)
+list.classList.add("my-list")
