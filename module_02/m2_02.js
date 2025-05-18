@@ -5,12 +5,21 @@
 
 let participantAmount = parseInt(prompt("How many participants?"))
 
+let names = []
+
+for (let i = 0; i < participantAmount; i++) {
+  let name = prompt("Please give the name of participant number " + i + 1 + ":")
+  names[i] = name
+}
+
+names.sort()
+
 let organizedList = document.createElement("ol")
 
 for (let i = 0; i < participantAmount; i++) {
-  let name = prompt("Please give the name of participant number " + i+1 + ":")
+  let listName = names[i]
   let participant = document.createElement("li");
-  participant.textContent = name
+  participant.textContent = listName
   organizedList.appendChild(participant)
 }
 document.querySelector("#target").appendChild(organizedList)
