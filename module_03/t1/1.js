@@ -5,8 +5,13 @@
 // <li>Third item</li>
 // Add class my-list to the element with id="target"
 
-let list = document.createElement("#target")("li")
+'use strict'
 
-list.textContent("First item")
-list.textContent("Second item")
-list.textContent("Third item")
+let list = document.getElementById("target")
+
+list.innerHTML = `
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>`
+
+list.classList.add(my-list)
