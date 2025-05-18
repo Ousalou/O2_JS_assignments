@@ -5,11 +5,12 @@
 
 let numbers = []
 
-for (i = 0; 5 < i; i++) {
+for (let i = 0; i < 5; i++) {
   let number = parseInt(prompt("Please submit a number:"))
   numbers[i] = number
 }
 
-numbers.sort((a, b) => a - b);
-
-document.createElement("#target").innerHTML = numbers
+for (let i = 0; i < 5; i++) {
+  printNumber = numbers[4-i]
+  document.querySelector("#target").innerHTML += " " + printNumber
+}
