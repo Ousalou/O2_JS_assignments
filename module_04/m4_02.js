@@ -1,6 +1,3 @@
-// Make an app that retrieves information about a TV series you enter and displays it in the console. (2p)
-// API to use: TVMaze API
-// First, make a valid HTML page with a search form. Example form:
 // <form action="https://api.tvmaze.com/search/shows">
 //   <input id="query" name="q" type="text">
 //   <input type="submit" value="Search">
@@ -13,7 +10,6 @@
 // Print the search result to the console. (3p)
 
 let form = document.createElement("form")
-form.action = "https://api.tvmaze.com/search/shows"
 
 let input = document.createElement("input")
 input.id = "query"
@@ -29,3 +25,10 @@ form.appendChild(input2)
 
 document.body.appendChild(form)
 
+form.addEventListener("submit", async function() {
+  event.preventDefault()
+  let tvShow = input.value
+  let response = await fetch("https://api.tvmaze.com/search/shows?q=" +tvShow)
+  let jsondata = await response.json()
+  console.log(jsondata)
+})
